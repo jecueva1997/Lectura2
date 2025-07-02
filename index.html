@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cenicienta de Jorge Volpi - Hipermedia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { 
+            font-family: 'Georgia', serif; 
+            background: #18171c; 
+            color: #eee; 
+            margin: 0; 
+            padding: 0;
+            min-height: 100vh;
+        }
+        header, footer {
+            background: #2c2936;
+            color: #fff;
+            text-align: center;
+            padding: 1.2em 0;
+        }
+        main {
+            max-width: 700px;
+            margin: 2em auto;
+            background: #23212b;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px #0006;
+            padding: 2em;
+        }
+
+        
+        section {
+            display: none;
+            animation: fadein 0.7s;
+        }
+        section.active {
+            display: block;
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: none;}
+        }
+        .choice-links {
+            margin: 1.5em 0;
+        }
+        .choice-links a {
+            color: #f3a6a6;
+            text-decoration: underline;
+            margin-right: 1em;
+        }
+        blockquote {
+            color: #aad8d3;
+            background: #14131a;
+            border-left: 3px solid #aad8d3;
+            margin: 1.5em 0;
+            padding: 1em 2em;
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            main { padding: 1em; }
+            nav { flex-direction: column; align-items: center;}
+        }
+    </style>
+</head>
+<body>
+
+  <!-- AUDIO DE FONDO OCULTO -->
+  <audio id="fondo" loop hidden>
+    <source src="Audio/audio.mpeg" type="audio/mpeg">
+  </audio>
+
+
+<header>
+    <h1>Cenicienta de Jorge Volpi </h1>
+    <p>Una experiencia hipermedia inspirada en la obra "Oscuro bosque Oscuro"</p>
+</header>
+<main>
+
+    <section id="home" class="active">
+        <div style="text-align: center;">
+            <img src="Imagen/portada.jpeg" alt="Descripción de la imagen">
+        </div>
+        
+        <div style="text-align: center;" >
+             <button onclick="iniciarExperiencia()">Empezar lectura</button>        
+        </div>
+    </section>
+
+    
+
+    <section id="recuerdos">
+        <div style="text-align: center;">
+            <img src="Imagen/InicioFin.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>El inicio del  fin</h2>
+        <p>Jon Guridien se encontraba exhausto tras un día lleno de exterminar insectos por orden del capitán y otros por decisión 
+            propia. Se había dado cuenta que disfrutaba del sonido que hacía su bayoneta al disparar. 
+            Tal acción lo llenaba de tanto éxtasis que se había convertido en la parte favorita de su día a día. 
+            Pero lastimosamente para Jon Guridien su actividad favorita había culminado</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#carpaDescanso" onclick="showSection('carpaDescanso');return false;" style="color: red;">Entrar en la carpa y descansar</a>
+            <a href="#SalirCaminar" onclick="showSection('SalirCaminar');return false;" style="color: red;">Salir a caminar por el bosque</a>
+        </div>
+
+    </section>
+
+    <section id="SalirCaminar">
+        <div style="text-align: center;">
+            <img src="Imagen/SalirBosque.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Salir a caminar por el bosque</h2>
+        <p>Jon Guiridien decidió salir con su bayoneta a seguir cazando más insectos mientras buscaba conciliar 
+            el sueño. De pronto vio a lo lejos una luz incandescente que lo llamaba a adentrarse en el bosque. 
+            Preso de la curiosidad decidió ir tras ella. Mientras más se adentraba en aquel lugar sentía que se 
+            perdía en el oscuro bosque oscuro, estaba listo para regresar cuando cayó en una zanja. Al levantarse 
+            pudo observar un gran castillo que estaba de fiesta.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#EntrarCastillo" onclick="showSection('EntrarCastillo');return false;" style="color: red;">Entrar al castillo</a>
+            <a href="#NoEntrar" onclick="showSection('NoEntrar');return false;" style="color: red;">No entrar al castillo</a>
+        </div>
+    </section>
+
+    <section id="NoEntrar">
+        <div style="text-align: center;">
+            <img src="Imagen/NoCastillo.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>No entrar al castillo</h2>
+        <p>Sintió temor por encontrar un castillo en medio de la nada y decidió rodearlo para evitar cualquier problema. 
+            Estuvo un buen rato caminando y empezó a tener hambre. Vio a lo lejos un pequeño pueblo y decidió acercarse 
+            para buscar algo de comer. Al llegar notó que había un silencio escalofriante en todo el lugar, tocó la 
+            puerta de varias casas pero no tuvo respuesta alguna. De pronto vio que había una luz que resplandecía de 
+            una pequeña ventana que parecía ser del sótano de una casa.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#TocarPuerta" onclick="showSection('TocarPuerta');return false;" style="color: red;">Tocar la puerta de aquella casa</a>
+            <a href="#Explorar" onclick="showSection('Explorar');return false;" style="color: red;">Explorar el pueblo</a>
+        </div>
+    </section>
+
+    <section id="Explorar">
+        <div style="text-align: center;">
+            <img src="Imagen/ExplorarPuelo.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Explorar el pueblo</h2>
+        <p>Pensó que era la única casa ocupada del pueblo por lo que decidió explorar las demás. Comió a su gusto y 
+            antes de irse la curiosidad lo invadió, sintió la necesidad de hacer sonar otra vez su bayoneta y decidió 
+            ir a aquel sótano de aquella casa. Al bajar al sótano vio el cuerpo de una mujer tirado en el suelo dentro 
+            de una celda con unos dibujos en su mano. Los recogió y vio que en todos ellos había un dibujo de una 
+            zapatilla de cristal. Mientras los veía escuchó una multitud que se acercaba, quizás venían del castillo. 
+            Temeroso por la gran multitud decidió disparar a aquellas personas que entraran a la casa y luego huir. 
+            Disparó a 3 mujeres, las dos más jóvenes tenían raspones en sus tobillos, como si hubieran forzado algo. 
+            Mientras observaba los cuerpos la multitud lo atrapó, no pudo defenderse. Lo arrodillaron delante de todos, 
+            iban a ejecutarlo hasta que escuchó decir “maten al insecto”. Esto hizo que se despertara en aquella zanja 
+            que había caído en un principio. Asustado corrió de nuevo al campamento pero no pudo encontrar el camino, 
+            se perdió para siempre en el oscuro bosque oscuro.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="TocarPuerta">
+        <div style="text-align: center;">
+            <img src="Imagen/TocarPuerta.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Tocar la puerta de aquella casa</h2>
+        <p>Impulsado por el hambre decidió entrar en la casa sigilosamente, pensó que la persona que se encontraba en 
+            la casa estaría abajo en el sótano por lo que iría despacio a la cocina a buscar algunos alimentos y se 
+            retiraría de inmediato. Al estar con su bayoneta pensó que ya que estaba adentro podría amedrentar al 
+            dueño de la casa y robar algunas cosas de valor. Al bajar al sótano vio el cuerpo de una mujer tirado 
+            en el suelo dentro de una celda con unos dibujos en su mano. Los recogió y vio que en todos ellos había 
+            un dibujo de una zapatilla de cristal. Mientras los veía escuchó una multitud que se acercaba, quizás 
+            venían del castillo. Temeroso por la escena, decidió disparar a aquellas personas que entraran a la casa. 
+            Disparó a 3 mujeres, las dos más jóvenes tenían raspones en sus tobillos, como si hubieran forzado algo. 
+            De pronto vio que la multitud se acercaba a la casa con armas, trinches y palos, sabía que irían tras él 
+            cuando escuchó decir “atrapen al insecto”. Esto hizo que se despertara en aquella zanja que había caído 
+            en un principio. Asustado corrió de nuevo al campamento pero no pudo encontrar el camino, se perdió para 
+            siempre en el oscuro bosque oscuro.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="EntrarCastillo">
+        <div style="text-align: center;">
+            <img src="Imagen/EntrarCastillo.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Entrar al castillo</h2>
+        <p>Al entrar en el castillo presenció un enorme baile con un gran banquete, preguntó a uno de los 
+            invitados el motivo de la celebración y le dijo que el príncipe de este reino estaba en busca de 
+            una esposa. La dama seleccionada sería aquella a quien le quede la zapatilla de cristal. 
+            Dos damiselas se peleaban por probarse si les calzaba tan exuberante calzado. Una de ellas era alta 
+            y rotunda, mientras que la otra rubicunda y discreta, Jon Guiridien, se familiarizó con esta escena 
+            recordando aquel cuento infantil que le contaba a sus hijas y había visto en las manos de aquella 
+            niña que había asesinado en la tarde. Entonces pensó en Cenicienta y sus hijas, sintió que por ellas, 
+            por su recuerdo, debía buscarla. Pero nunca antes había estado en esta zona del oscuro bosque oscuro, 
+            no tenía ni idea de la existencia de un castillo en aquel lugar.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#BuscarCeni" onclick="showSection('BuscarCeni');return false;" style="color: red;">Buscar a Cenicienta</a>
+            <a href="#PermaBaile" onclick="showSection('PermaBaile');return false;" style="color: red;">Permanecer en el baile</a>
+        </div>
+    </section>
+
+    <section id="PermaBaile">
+        <div style="text-align: center;">
+            <img src="Imagen/Baile.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Permanecer en el baile</h2>
+        <p>Dispersó esos pensamientos y no hizo nada más que buscar un buen vino para ello. Las doncellas lo vieron, 
+            y su particular forma de vestir llamó su atención. De dónde viene tan apuesto varón dijeron, de un lugar 
+            al que no quiero regresar respondió. Aquellas hermanas invadían de preguntas a Jon Guiridien él cuál hacía 
+            oídos sordos aquellas voces tan chillonas. Cansado y frustrado por aquellas mujeres tan molestas salió del 
+            lugar. Su borrachera o su cansancio hizo que vea una doncella tan bella, que el resplandor de esa zapatilla 
+            sería opacado por el brillo de sus ojos. La siguió intrépidamente con el afán de admirar su rostro de cerca. 
+            Entró a la casa en la que la vio perderse, y no la halló. Un hedor putrefacto lo dirigió hasta el sótano en 
+            donde yacía su cuerpo. Entonces gritó fuerte, y despertó. Clavado en el suelo de aquel oscuro bosque oscuro 
+            con su bayoneta en mano, sentía la culpa de todos aquellos insectos que había asesinado. Acostado en el suelo 
+            no lo acompañaba nada más que el remordimiento.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="BuscarCeni">
+        <div style="text-align: center;">
+            <img src="Imagen/portada.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Buscar a Cenicienta</h2>
+        <p>Decidió salir en busca de aquella mujer, Su intuición le decía que debía ayudarla, puerta tras puerta 
+            abrió, el desconsuelo se transmitía en sollozos de cansancio. Cenicienta no estaba por ningún lado, 
+            una extraña luz se veía en el muerdecillo de la bisagra oxidada de aquella vieja cabaña. Se apresuró 
+            con la esperanza de poder reivindicarse de las atrocidades cometidas en el campo de batalla, motivado 
+            por el recuerdo de sus hijas, dio un patadón que desplomó la puerta en un instante. Buscaba y buscaba, 
+            hasta que un hedor putrefacto llegó a él. Bajó rápidamente a aquel sótano en el que yacía el cuerpo de 
+            Cenicienta, no podía hacer nada, más que llenar su mirada de lágrimas y dejarlas caer. Gritó fuerte, y 
+            despertó. Clavado en el suelo de aquel oscuro bosque oscuro con su bayoneta en mano. Y la muerte de 
+            aquellos insectos en cada paso que daba. Acostado en el suelo no lo acompañaba nada más que el remordimiento.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+
+    <section id="carpaDescanso">
+        <div style="text-align: center;">
+            <img src="Imagen/carpa.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Entrar a la carpa a descansar</h2>
+        <p>Se acostó y de repente tuvo una lluvia de recuerdos de su vida pasada, por su mente pasó su amada 
+            esposa, sus dos hijas y su hijastra. Una lágrima de felicidad comenzó a recorrer su mejilla cuando 
+            todos esos agradables recuerdos empezaron a nublarse. Ahora solo venía a su mente muerte, 
+            violencia y aquellos tres insectos que había encontrado escondidos en un armario. 
+            Recordaba la tierna escena que pudo deslumbrar de aquellos niños. El hermano mayor sostenía a la 
+            más pequeña que leía el cuento de la Cenicienta en voz baja, casi imperceptible, mientras que el 
+            otro hermano se encontraba dormido. Luego de verlos por un momento sintió que su bayoneta le 
+            hablaba y decidió dispararles. Esto hizo que volviera a abrir los ojos un poco asustado.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#LavarCara" onclick="showSection('LavarCara');return false;" style="color: red;">Lavarse la cara y buscar dormir</a>
+            <a href="#SalirCarpa" onclick="showSection('SalirCarpa');return false;" style="color: red;">Salir de la carpa a tomar aire</a>
+        </div>
+    </section>
+
+    <section id="SalirCarpa">
+        <div style="text-align: center;">
+            <img src="Imagen/SalirCarpa.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Salir de la carpa a tomar aire</h2>
+        <p>Jon Guridien salió de la carpa con el ceño fruncido y la cabeza cargada de pensamientos que no 
+            lograba ordenar. El aire helado le golpeó el rostro, pero lo recibió como un alivio necesario. 
+            Caminó unos minutos hasta que vio una figura encorvada que se arrastraba entre la tierra. 
+            Al acercarse con cautela, se dio cuenta que se trataba de una niña. Tenía el rostro sucio y mirada 
+            extraviada, vestida con harapos cubiertos de ceniza y un solo zapato en el pie. Jadeaba con fuerza y 
+            murmuraba palabras confusas sobre una hora que se acababa, mientras miraba con miedo hacia la 
+            oscuridad, como si alguien —o algo— la siguiera. Jon Guridien sintió el impulso de intervenir, de 
+            preguntarle si estaba bien, si necesitaba ayuda. Le tendió la mano, dudando de si ella siquiera lo 
+            veía. Pero en un descuido, cuando bajó la mirada por un instante hacia un papel viejo que el viento 
+            había arrastrado hasta sus pies, la figura desapareció. Dudó en buscarla o irse del lugar.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#Tiempo" onclick="showSection('Tiempo');return false;" style="color: red;">Buscar aquella niña</a>
+            <a href="#Desaparicion" onclick="showSection('Desaparicion');return false;" style="color: red;">Irse del lugar</a>
+        </div>
+    </section>
+
+    <section id="Desaparicion">
+        <div style="text-align: center;">
+            <img src="Imagen/portada.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Irse del lugar</h2>
+        <p>Jon Guridien no quiso quedarse a averiguar lo que pasaba con aquella niña, algo dentro de sí mismo le 
+            advertía que corriera. Empezó a volver al campamento lo más rápido hasta que llegó a su carpa. 
+            Se encerró en ella, trató de taparse en sus cobijas pero aquella situación lo dejaba tranquilo. 
+            Sintió que el suelo empezaba a temblar y una radiante luz emergía desde aquel lugar. Se volvió a 
+            armar de valor y al salir de su carpa no vio más a lo lejos que una zapatilla de cristal. 
+            Días después Jon Guridien se siente perseguido por su imagen. Sueña con ella, ve su figura en 
+            reflejos y rincones oscuros. Su mente comienza a fracturarse entre la realidad y la obsesión. 
+            Se siente dentro de un oscuro bosque oscuro. Maldice aquel día en el que empezó a perder la cordura.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="Tiempo">
+        <div style="text-align: center;">
+            <img src="Imagen/Tiempo.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Buscar aquella niña</h2>
+        <p>Jon Guridien empezó a buscar entre los arbustos incansablemente hasta que la escuchó murmurar. 
+            Repetía constantemente “la hora se acaba, la hora se acaba”. Mientras trataba de auxiliarla notó 
+            que el campamento parecía distorsionarse, había una torre grande con un reloj que empezaba a dar 
+            marcha hacia atrás. Todo empezó a nublarse, entró en desesperación no supo hacia donde correr y todo 
+            fue demasiado tarde. La mañana siguiente los compañeros de Jon Guridien lo buscaban por todo lado 
+            sin éxito hasta que uno de ellos descubrió las marcas de un carruaje. Esto se les hizo extraño porque 
+            no tenían idea que alguien iba ir a visitarlos o dejar providencias, mucho menos en un carruaje. 
+            Y así, nunca más se supo de Jon Guridien. Aunque a partir de ese día, los soldados empezaron a 
+            conversar acerca de unas personas que veían por las noches en el oscuro bosque oscuro.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="LavarCara">
+        <div style="text-align: center;">
+            <img src="Imagen/LavarseCara.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Lavarse la cara y buscar dormir</h2>
+        <p>Después de hacerlo se volvió a acostar sin éxito. Cada vez que cerraba sus ojos la imagen de la niña 
+            leyendo Cenicienta se volvía más nítida. Era como si la historia lo llamara desde algún rincón de su mente, 
+            uno al que no se atrevía a mirar. Estaba mirando el techo de la carpa cuando de pronto escuchó unos pasos 
+            ligeros acercarse. Intentó levantarse y un escalofrío intenso recorrió todo su cuerpo. De pronto escuchó una 
+            sutil voz infantil susurrar: -Y entonces, Cenicienta se escondió con sus zapatillas de cristal… Era la misma 
+            voz que había oído antes del disparo. Jon Guridien agarró su bayoneta, se armó de valor y salió rápidamente 
+            de la tienda atento al más mínimo movimiento pero todo se encontraba en silencio.</p>
+        
+        <div style="display: flex; justify-content: space-between;">
+            <a href="#IgnorarVoz" onclick="showSection('IgnorarVoz');return false;" style="color: red;">Ignorar la voz e intentar dormir</a>
+            <a href="#SalirVoz" onclick="showSection('SalirVoz');return false;" style="color: red;">Salir en busca de aquella voz</a>
+        </div>
+    </section>
+
+    <section id="IgnorarVoz">
+        <div style="text-align: center;">
+            <img src="Imagen/portada.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Ignorar la voz e intentar dormir</h2>
+        <p>Jon Guridien respiró profundo, se pasó las manos por la cara y regresó a su tienda. 
+            Pensó que todo era una alucinación causada por el cansancio, que debía ignorarlo si quería 
+            conservar la cordura. Se cubrió con la manta hasta el cuello, cerró los ojos con fuerza y 
+            trató de pensar en otra cosa. Pero la voz seguía ahí, ahora dentro de su cabeza. Murmuraba nombres. 
+            El suyo. El de su esposa. El de los niños. De pronto, no estaba en la carpa, sino en un sótano. 
+            Una niña, con un vestido sucio, unas zapatillas de crital y una vela en la mano, lo observaba. 
+            —Déjame terminar el cuento por favor- dijo.  La vela se apagó. Todo se volvió negro. Jon despertó 
+            agitado, pero ya no estaba en su cuerpo. Veía su cuerpo, dormido, desde lo alto. En su rostro, una 
+            mueca de terror congelado. Había quedado atrapado en el sueño. En la historia. Y nunca más volvió a 
+            despertar.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    <section id="SalirVoz">
+        <div style="text-align: center;">
+            <img src="Imagen/SalirBusca.jpeg" alt="Descripción de la imagen">
+        </div>
+        <h2>Salir en busca de aquella voz</h2>
+        <p>Jon Guridien no quedó tranquilo, tomó su linterna y bayoneta para encontrar el origen de aquella voz. 
+            Caminó entre las carpas de sus compañeros y todos estaban dormidos. Mientras más explorar el 
+            campamento la voz se oía más fuerte. La siguió hasta la fogata central, allí entre las brazas vio 
+            una pequeña silueta. Era una niña que flotaba sosteniendo un libro que se consumía lentamente en la 
+            leña. —¿Quién eres? —preguntó él. La niña giró. Era aquella niña que había asesinado horas antes. 
+            -El cuento ha comenzado de nuevo. Esta vez, tú eres la Cenicienta. Y no hay hada madrina que te salve. 
+            Jon intentó correr, pero el suelo se abrió bajo sus pies. Al amanecer lo encontraron muy lejos del 
+            campamento, con la mirada perdida y el cuerpo congelado. Nadie supo explicar qué hacía allí. En su mano 
+            sostenía una zapatilla de cristal cubierta de sangre.</p>
+
+        <div style="text-align: center;" >
+            <a href="#home" onclick="showSection('home');return false;" style="color: white;">Volver al inicio</a>
+        </div>
+    </section>
+
+    
+</main>
+<footer>
+    <p>&copy; 2025 Inspirado en "Cenicienta" de Jorge Volpi | Integrantes: Augusto Armijos, Elvis Cueva, Ignacio Gonzaga, Maribel Ramón, Nelly Ochoa</p>
+</footer>
+<script>
+function showSection(id) {
+    document.querySelectorAll('section').forEach(
+        section => section.classList.remove('active')
+    );
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
+window.addEventListener('DOMContentLoaded', () => {
+    // Navegación por hash en URL
+    const hash = window.location.hash.replace('#','home');
+    if(hash && document.getElementById(hash)) showSection(hash);
+});
+</script>
+
+ <!-- SCRIPT QUE UNE LA ACCIÓN -->
+  <script>
+    function iniciarExperiencia() {
+      // Reproducir audio
+      const audio = document.getElementById('fondo');
+      audio.play().catch(error => {
+        console.log("El navegador bloqueó el audio:", error);
+      });
+
+      // Mostrar la sección 'recuerdos'
+      showSection('recuerdos');
+    }
+
+    
+    
+  </script>
+
+</body>
+</html>
